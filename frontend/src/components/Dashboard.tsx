@@ -1,3 +1,3 @@
 export default function Dashboard() {
-  return <div>welcome to Dashboard</div>;
+  return <div className="p-20">welcome to Dashboard</div>;
 }
