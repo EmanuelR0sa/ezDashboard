@@ -7,7 +7,7 @@ import { FiSettings } from "react-icons/fi";
 
 export default function Sidbar() {
   return (
-    <div className="w-56 h-screen bg-slate-50">
+    <div className="sidebar bg-white">
       <h1 className="text-center mt-6 underline underline-offset-4">ArchiDash</h1>
       <div className="flex justify-center">
         <div className=" flex flex-col text-base mt-20">
