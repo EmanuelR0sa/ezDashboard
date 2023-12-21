@@ -1,11 +1,12 @@
 
 export default function AddCustomer() {
   return (
-    <div className="p-12 w-full flex justify-center">
-    <form action="" className="text-xl font-normal flex flex-col w-96">
+    <div className="p-12 flex w-full justify-center items-center">
+  
+<form action="" className="text-xl font-normal flex  flex-col w-96">
 <div className="flex flex-col"> 
 <label htmlFor="firstName">First name </label>
-<input type="text" id="firstName" name="firstName" placeholder="first name" className="px-2" />
+<input type="text" id="firstName" name="firstName" placeholder="first name" className="px-2 border rounded-md" />
 </div>
 <div className="flex flex-col pt-2"> 
 <label htmlFor="LastName">Last name </label>
@@ -27,7 +28,7 @@ export default function AddCustomer() {
 <div className="flex flex-col pt-2"> 
 <input type="submit" className="bg-sky-700 hover:bg-sky-900 text-white cursor-pointer"/>
 </div>
-    </form>
-    </div>
+</form>
+</div>
   )
 }
