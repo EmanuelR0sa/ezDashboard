@@ -7,4 +7,23 @@
         min-height: 100vh;
         width: 224px;
     }
+    .customer-nav{
+        font-size: 20px;
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-weight: 400;
+        color: rgb(156 163 175);
+    }
+
+    .customer-active{
+        color: rgb(3 7 18);
+        background-color: rgb(249 250 251);
+        border-top-left-radius: 0.75rem/* 12px */;
+        border-top-right-radius: 0.75rem/* 12px */;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
 }

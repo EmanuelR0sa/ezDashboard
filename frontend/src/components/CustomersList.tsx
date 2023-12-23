@@ -1,6 +1,6 @@
 
 export default function CustomersList() {
   return (
-    <div className="p-12">Customers List here</div>
+    <div className="bg-gray-50 mx-2 p-12">Customers List here</div>
   )
 }

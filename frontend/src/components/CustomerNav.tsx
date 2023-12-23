@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function CustomerNav() {
-  return (
-    <div className="flex pt-12">
-<Link to="/customers/customerslist"> <div className="text-xl font-normal px-10 text-center rounded-t-xl hover:bg-neutral-200 "> Customer List </div></Link>
-<Link to="/customers/addcustomer"> <div className="text-xl font-normal px-10 text-center rounded-t-xl hover:bg-neutral-200 "> Add Customer </div> </Link>
 
+  const location = useLocation();
+  return (
+    <div className="customer-nav flex pt-12 mx-2">
+<Link to="/customers/customerslist" className={location.pathname==='/customers/customerslist'?'customer-active':""}> Customer List</Link>
+<Link to="/customers/addcustomer" className={location.pathname==='/customers/addcustomer'?'customer-active':""}> Add Customer </Link>
     </div>
   )
 }
