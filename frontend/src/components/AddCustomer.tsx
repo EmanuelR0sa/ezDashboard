@@ -3,7 +3,7 @@ export default function AddCustomer() {
   return (
     <div className="bg-gray-50 mx-2 p-12 flex  justify-center items-center">
   
-<form action="" className="text-xl font-normal flex  flex-col w-96">
+<form action="" className="text-base font-normal flex  flex-col w-96">
 <div className="flex flex-col"> 
 <label htmlFor="firstName">First name </label>
 <input type="text" id="firstName" name="firstName" placeholder="first name" className="px-2 border rounded-md" />

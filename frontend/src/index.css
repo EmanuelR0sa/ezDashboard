@@ -26,4 +26,22 @@
         margin-left: 8px;
         margin-right: 8px;
     }
+
+    .dashboard-nav{
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+        margin: 2px 0px 2px;
+       
+    }
+
+    .dashboard-nav:hover {
+        background-color: rgb(125 211 252);
+        border-radius: 0.75rem;
+    }
+
+    .dashboard-active{
+        background-color: rgb(224 242 254);
+        border-radius: 0.75rem;
+    }
 }
