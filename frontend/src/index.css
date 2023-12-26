@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .sidebar{
+        min-height: 100vh;
+        width: 224px;
+    }
+    .customer-nav{
+        font-size: 20px;
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-weight: 400;
+        color: rgb(156 163 175);
+    }
+
+    .customer-active{
+        color: rgb(3 7 18);
+        background-color: rgb(249 250 251);
+        border-top-left-radius: 0.75rem/* 12px */;
+        border-top-right-radius: 0.75rem/* 12px */;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .dashboard-nav{
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+        margin: 2px 0px 2px;
+       
+    }
+
+    .dashboard-nav:hover {
+        background-color: rgb(186 230 253);
+        border-radius: 0.75rem;
+    }
+
+    .dashboard-active{
+        background-color: rgb(224 242 254);
+        border-radius: 0.75rem;
+    }
+}

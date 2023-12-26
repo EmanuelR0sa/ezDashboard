@@ -1,3 +1,8 @@
+
+
 export default function Projects() {
-  return <div>my project list</div>;
+  return <div className="p-12">
+    <div className="text-xl font-normal">Project</div>
+ 
+    </div>;
 }
