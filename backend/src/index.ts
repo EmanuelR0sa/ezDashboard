@@ -2,21 +2,36 @@ import { config } from "dotenv";
 config();
 import express, {Request, Response} from 'express'
 import mongoose from 'mongoose';
-import customer from "./models/customer"
+import Customer from "./models/customer"
+import cors from "cors"
 
 const PORT= 5000
 
 const app = express();
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("gg");
+app.use(cors());
+app.use(express.json());
+
+app.post("/customer", async(req: Request, res: Response) => {
+    const { firstName, lastName, address, phone, email}= req.body
+    const customerData={firstName: firstName, lastName: lastName, address: address, phone: phone, email: email}
+    const newCustomer= new Customer(customerData);
+    const saveCustomer= await newCustomer.save();
+    res.json(saveCustomer);
 });
 
-app.get("/hello", (req: Request, res: Response)=> {
-    res.send("hello world");
+/*
+app.post("/customer", async(req: Request, res: Response) => {
+   // const { firstName, lastName, address, phone, email}= req.body
+    const customerData={firstName: "Antonio", lastName: "Costa", address: "main street, lisbon", phone: "0000", email: "costa@mail.com"}
+    const newCustomer= new Customer(customerData);
+    const saveCustomer= await newCustomer.save();
+    res.json(saveCustomer);
 });
+
+*/
 
 mongoose.connect(process.env.MONGO_URL!).then(()=>{
-    console.log(`listening on port ${5000}`)
+    console.log(`listening on port ${PORT}`)
         app.listen(PORT);
 });
