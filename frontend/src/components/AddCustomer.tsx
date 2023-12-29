@@ -11,6 +11,7 @@ export default function AddCustomer() {
     handleSubmit,
     formState: {errors, isSubmitting },
     reset,
+    setError,
 
   } = useForm<TFormSchema>({
     resolver: zodResolver(formSchema)
@@ -18,7 +19,26 @@ export default function AddCustomer() {
 
 
   const onSubmit= async (data: TFormSchema) => {
-    console.log(data);
+    //console.log(data);
+    const response= await fetch("http://localhost:5000/customer",{
+      method: "POST",
+      body:JSON.stringify(data),
+      headers:{
+        "Content-Type": "application/json",
+      },
+    });
+    const responseData= await response.json();
+    if(!response.ok){
+      alert("Submitting form failed!");
+      return
+    }
+
+    if(responseData.errors){
+      const errors= responseData.errors;
+      if(errors.firstName){
+        setError("firstName", {});
+      }
+    }
     reset();
   }
 
