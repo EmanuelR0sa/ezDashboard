@@ -15,16 +15,19 @@ app.use(cors({
 app.use(express.json());
 
 app.post("/customer", async(req: Request, res: Response) => {
-    const { firstName, lastName, address, phone, email}= req.body
+    const {firstName, lastName, address, phone, email}= req.body
     const customerData={firstName: firstName, lastName: lastName, address: address, phone: phone, email: email}
     const newCustomer= new Customer(customerData);
     const saveCustomer= await newCustomer.save();
-    if(saveCustomer){
-        res.send( "customer added successfully")
+    res.json(saveCustomer);
+   /* if(saveCustomer){
+        res.send("customer added successfully")
     }else{
         res.send("failed to create new customer")
-    }
-    res.json(saveCustomer);
+    }*/
+   
+    res.end();
+
 });
 
 /*

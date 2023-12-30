@@ -22,21 +22,73 @@ export default function AddCustomer() {
     //console.log(data);
     const response= await fetch("http://localhost:5000/customer",{
       method: "POST",
-      body:JSON.stringify(data),
+      body: JSON.stringify({
+        firstName: data.firstName,
+      lastName: data.lastName,
+     address: data.address,
+     phone: data.phone,
+     email: data.email,
+    }),
       headers:{
         "Content-Type": "application/json",
       },
     });
-    const responseData= await response.json();
+    let responseData;
     if(!response.ok){
       alert("Submitting form failed!");
-      return
+      return 
+    }else{
+      responseData= await response.json()
+      alert("send succefuly");
     }
+  
 
     if(responseData.errors){
       const errors= responseData.errors;
       if(errors.firstName){
-        setError("firstName", {});
+        setError("firstName", {
+          type: "server",
+          message: errors.email
+        });
+      }
+      if(errors.lastName){
+        setError("lastName", {
+          type: "server",
+          message: errors.lastName
+        });
+      }
+
+      else if(errors.address){
+        setError("address", {
+          type: "server",
+          message: errors.address
+        });
+      }
+      else if(errors.phone){
+        setError("phone", {
+          type: "server",
+          message: errors.phone
+        });
+      }
+      else if(errors.phone){
+        setError("phone", {
+          type: "server",
+          message: errors.phone
+        });
+      }
+      else if(errors.phone){
+        setError("phone", {
+          type: "server",
+          message: errors.phone
+        });
+      }
+      else if(errors.email){
+        setError("email", {
+          type: "server",
+          message: errors.email
+        });
+      } else {
+        alert("Something went wrong!");
       }
     }
     reset();
@@ -53,8 +105,8 @@ type="text" id="firstName" name="firstName" placeholder="first name" className="
 {errors.firstName && (<p className="text-red-500">{`${errors.firstName.message}`}</p>)}
 </div>
 <div className="flex flex-col pt-2"> 
-<label htmlFor="LastName">Last name </label>
-<input {...register("lastName")} type="text" id="lastName" name="LastName" placeholder="last name" className="px-2 border rounded-md" />
+<label htmlFor="lastName">Last name </label>
+<input {...register("lastName")} type="text" id="lastName" name="lastName" placeholder="last name" className="px-2 border rounded-md" />
 </div>
 
 <div className="flex flex-col pt-2"> 
