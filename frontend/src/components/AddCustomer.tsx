@@ -95,7 +95,7 @@ export default function AddCustomer() {
   }
 
   return (
-    <div className="bg-gray-50 mx-2 p-12 flex  justify-center items-center">
+    <div className="bg-gray-50 mx-2 mb-2 p-12 flex h-screen justify-center items-center">
   
 <form  onSubmit={handleSubmit(onSubmit)} className="text-base font-normal flex  flex-col w-96">
 <div className="flex flex-col"> 
