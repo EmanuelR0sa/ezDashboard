@@ -1,7 +1,7 @@
 import { TFormSchema, formSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod"
 import {useForm} from "react-hook-form"
-
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -35,11 +35,11 @@ export default function AddCustomer() {
     });
     let responseData;
     if(!response.ok){
-      alert("Submitting form failed!");
+      !response.ok ? toast.error("Submitting form failed!"): toast.loading('Loading...') ;
       return 
     }else{
       responseData= await response.json()
-      alert("send succefuly");
+      responseData ? toast.success('Successfully added!'): toast.loading('Loading...');
     }
   
 
@@ -95,7 +95,7 @@ export default function AddCustomer() {
   }
 
   return (
-    <div className="bg-gray-50 mx-2 p-12 flex  justify-center items-center">
+    <div className="bg-gray-50 mx-2 mb-2 p-12 flex h-screen justify-center items-center">
   
 <form  onSubmit={handleSubmit(onSubmit)} className="text-base font-normal flex  flex-col w-96">
 <div className="flex flex-col"> 
@@ -126,6 +126,8 @@ type="text" id="firstName" name="firstName" placeholder="first name" className="
 <button disabled={isSubmitting} type="submit" className="bg-blue-700 disabled:bg-gray-500 hover:bg-blue-950 text-white cursor-pointer rounded-md"> Submit </button>
 </div>
 </form>
+<Toaster  position="bottom-right"
+  reverseOrder={false}/>
 </div>
   )
 }
