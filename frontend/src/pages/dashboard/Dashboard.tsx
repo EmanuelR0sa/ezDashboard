@@ -1,7 +1,7 @@
 import {Grid, Col } from "@tremor/react";
-import ProjectTable from "./ui/ProjectTable";
-import IncomeChart from "./ui/IncomeChart";
-import ThreeCards from "./ui/ThreeCards";
+import ProjectTable from "../../components/ui/ProjectTable";
+import IncomeChart from "../../components/ui/IncomeChart";
+import ThreeCards from "../../components/ui/ThreeCards";
 
 
 export default function Dashboard() {

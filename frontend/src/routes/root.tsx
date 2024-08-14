@@ -1,13 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../pages/dashboard/Dashboard";
 import InnerContent from "../components/InnerContent";
-import Income from "../components/Income";
-import Projects from "../components/Projects";
-import Expenses from "../components/Expenses";
-import Settings from "../components/Settings";
-import Customers from "../components/Customers";
-import CustomersList from  "../components/CustomersList";
-import AddCustomers from "../components/AddCustomer";
+import Income from "../pages/income/Income";
+import Projects from "../pages/projects/Projects";
+import Expenses from "../pages/expenses/Expenses";
+import Settings from "../pages/settings/Settings";
+import Customers from "../pages/customers/Customers";
+import CustomersList from  "../pages/customers/CustomersList";
+import AddCustomers from "../pages/customers/AddCustomer";
 
 export default function Root() {
   return (
