@@ -23,11 +23,12 @@ export default function AddCustomer() {
     const response= await fetch("http://localhost:5000/customer",{
       method: "POST",
       body: JSON.stringify({
-        firstName: data.firstName,
+      firstName: data.firstName,
       lastName: data.lastName,
-     address: data.address,
-     phone: data.phone,
-     email: data.email,
+      company: data.company,
+      address: data.address,
+      phone: data.phone,
+      email: data.email,
     }),
       headers:{
         "Content-Type": "application/json",
@@ -57,7 +58,12 @@ export default function AddCustomer() {
           message: errors.lastName
         });
       }
-
+      else if(errors.company){
+        setError("company", {
+          type: "server",
+          message: errors.company
+        });
+      }
       else if(errors.address){
         setError("address", {
           type: "server",
@@ -108,7 +114,10 @@ type="text" id="firstName" name="firstName" placeholder="first name" className="
 <label htmlFor="lastName">Last name </label>
 <input {...register("lastName")} type="text" id="lastName" name="lastName" placeholder="last name" className="px-2 border rounded-md" />
 </div>
-
+<div className="flex flex-col pt-2"> 
+<label htmlFor="company">Company</label>
+<input {...register("company")} type="text"  id="company" name="company" placeholder="company name" className="px-2 border rounded-md"/>
+</div>
 <div className="flex flex-col pt-2"> 
 <label htmlFor="address">Address </label>
 <input {...register("address")} type="text"  id="address" name="address" placeholder="customer address" className="px-2 border rounded-md"/>
