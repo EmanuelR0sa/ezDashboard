@@ -19,14 +19,12 @@ app.use(express.json());
 
 
 app.post("/customer", async(req: Request, res: Response) => {
-    const {firstName, lastName, address, phone, email}= req.body
-    const customerData={firstName: firstName, lastName: lastName, address: address, phone: phone, email: email}
+    const {firstName, lastName, company, address, phone, email}= req.body
+    const customerData={firstName: firstName, lastName: lastName, company: company, address: address, phone: phone, email: email}
     const newCustomer= new Customer(customerData);
     const saveCustomer= await newCustomer.save();
     res.json(saveCustomer);
-   
     res.end();
-
 });
 
 
