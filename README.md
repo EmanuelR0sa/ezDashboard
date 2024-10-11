@@ -30,7 +30,7 @@ The project is built with a modern web stack featuring a frontend in React and T
 
 3. Start the project:
     ```bash
-    npm start
+    npm run dev
     ```
 
 --- 
