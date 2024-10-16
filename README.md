@@ -11,8 +11,8 @@ The project is built with a modern web stack featuring a frontend in React and T
 
 ## Tech Stack
 
-- **Frontend**: React,TypeScript,  CSS, HTML
-- **Backend**: Node.js, express.js, Mongo Db, 
+- **Frontend**: React,TypeScript, Tailwindcss
+- **Backend**: Node.js, express.js, Mongo Db 
   
 ## Installation
 
