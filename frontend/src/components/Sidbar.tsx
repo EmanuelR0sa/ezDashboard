@@ -11,7 +11,7 @@ export default function Sidbar() {
   const location = useLocation();
   return (
     <div className="sidebar bg-white">
-      <h1 className="text-center mt-6 underline underline-offset-4">ArchiDash</h1>
+      <h1 className="text-center mt-6 ">ezDashboard</h1>
       <div className="flex justify-center">
         <div className=" flex flex-col text-base mt-20 mx-2">
           <Link to="dashboard" className={location.pathname ==='/dashboard'?'dashboard-active':""}> <div className="dashboard-nav ">  <div className="text-xl pr-2"><FiMonitor/></div>  Dashboard </div></Link>

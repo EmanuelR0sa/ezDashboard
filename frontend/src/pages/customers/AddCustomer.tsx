@@ -105,7 +105,7 @@ export default function AddCustomer() {
   
 <form  onSubmit={handleSubmit(onSubmit)} className="text-base font-normal flex  flex-col w-96">
 <div className="flex flex-col"> 
-<label htmlFor="firstName">First name </label>
+<label htmlFor="firstName">First name * </label>
 <input {...register("firstName")}
 type="text" id="firstName" name="firstName" placeholder="first name" className="px-2 border rounded-md" />
 {errors.firstName && (<p className="text-red-500">{`${errors.firstName.message}`}</p>)}
@@ -127,7 +127,7 @@ type="text" id="firstName" name="firstName" placeholder="first name" className="
 <input {...register("phone")} type="number"  id="phone" name="phone" placeholder="phone number" className="px-2 border rounded-md"/>
 </div>
 <div className="flex flex-col pt-2"> 
-<label htmlFor="email">Email</label>
+<label htmlFor="email">Email *</label>
 <input {...register("email")} type="email"  id="email" name="email" placeholder="customer email" className="px-2 border rounded-md"/>
 {errors.email && (<p className="text-red-500">{`${errors.email.message}`}</p>)}
 </div>
