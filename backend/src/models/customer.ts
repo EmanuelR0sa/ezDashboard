@@ -9,7 +9,7 @@ const customerSchema= new Schema({
     lastName:  {type: String},
     company:  {type: String},
     address:  {type: String},
-    phone:  {type: Number},
+    phone:  {type: String},
     email:  {type: String, required: true},
     entryDate:{ type:Date, default:Date.now}
 

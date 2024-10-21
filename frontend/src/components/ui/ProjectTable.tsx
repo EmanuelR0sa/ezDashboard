@@ -1,6 +1,5 @@
-import { StatusOnlineIcon } from "@heroicons/react/outline";
+import { customerType } from "@/pages/customers/CustomersList";
 import {
-  Badge,
   Card,
   Table,
   TableBody,
@@ -11,55 +10,34 @@ import {
   Title,
 } from "@tremor/react";
 
-const data = [
-  {
-    name: "Viola Amherd",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Defence, Civil Protection and Sport (DDPS)",
-    status: "active",
-  },
-  {
-    name: "Simonetta Sommaruga",
-    Role: "Federal Councillor",
-    departement:
-      "The Federal Department of the Environment, Transport, Energy and Communications (DETEC)",
-    status: "active",
-  },
-  {
-    name: "Alain Berset",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Home Affairs (FDHA)",
-    status: "active",
-  },
-  {
-    name: "Ignazio Cassis",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Foreign Affairs (FDFA)",
-    status: "active",
-  },
-];
 
-export default function ProjectTable() {
+
+export default function ProjectTable({data}:{data:customerType[]}) {
+
+  if (!data || data.length === 0) {
+    return <div>No customer data available</div>;
+  }
+
   return (
     <div> 
     <Card>
-    <Title>Projects</Title>
+    <Title>Customers</Title>
     <Table className="mt-5">
       <TableHead>
         <TableRow>
           <TableHeaderCell>Name</TableHeaderCell>
-          <TableHeaderCell>Status</TableHeaderCell>
+          <TableHeaderCell>Company</TableHeaderCell>
+          <TableHeaderCell>Phone</TableHeaderCell>
+          <TableHeaderCell>Email</TableHeaderCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {data.map((item) => (
-          <TableRow key={item.name}>
-            <TableCell>{item.name}</TableCell>
-            <TableCell>
-              <Badge color="emerald" icon={StatusOnlineIcon}>
-                {item.status}
-              </Badge>
-            </TableCell>
+          <TableRow key={item._id}>
+            <TableCell>{item.firstName}</TableCell>
+            <TableCell>{item.company}</TableCell>
+            <TableCell>{item.phone}</TableCell>
+            <TableCell>{item.email}</TableCell>
           </TableRow>
         ))}
       </TableBody>
