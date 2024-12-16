@@ -1,6 +1,6 @@
 # ezDashboard
 
-**ezDashboard** is a web-based application designed to provide users with a simple and intuitive dashboard for data management. 
+**ezDashboard** is a web-based application designed to provide users with a simple and intuitive dashboard for data management.
 The project is built with a modern web stack featuring a frontend in React and TypeScript , and a backend server in node js.
 
 ## Features
@@ -12,28 +12,30 @@ The project is built with a modern web stack featuring a frontend in React and T
 ## Tech Stack
 
 - **Frontend**: React,TypeScript, Tailwindcss
-- **Backend**: Node.js, express.js, Mongo Db 
-  
+- **Backend**: Node.js, express.js, Mongo Db
+- **Testing**: Playwright
+
 ## Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/EmanuelR0sa/ezDashboard.git
-    ```
+   ```bash
+   git clone https://github.com/EmanuelR0sa/ezDashboard.git
+   ```
 2. Navigate to the project directories and install dependencies:
-    ```bash
-    cd frontend
-    npm install
-    cd ../backend
-    npm install
-    ```
+
+   ```bash
+   cd frontend
+   npm install
+   cd backend
+   npm install
+   ```
 
 3. Start the project:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   cd frontend
+   npm run dev
+   cd backend
+   npm run dev
+   ```
 
---- 
-
-
-
+---
