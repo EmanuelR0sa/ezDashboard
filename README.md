@@ -1,4 +1,4 @@
-# ezDashboard
+## Overview
 
 **ezDashboard** is a web-based application designed to provide users with a simple and intuitive dashboard for data management.
 The project is built with a modern web stack featuring a frontend in React and TypeScript , and a backend server in node js.
